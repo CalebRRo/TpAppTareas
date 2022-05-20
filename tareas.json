@@ -1,0 +1,18 @@
+[
+    {
+        "titulo" : "Repaso js",
+        "estado" : "en proceso"
+    },
+    {
+        "titulo" : "Tp app",
+        "estado" : "en proceso"
+    },
+    {
+        "titulo" : "Tp calculadora",
+        "estado" : "terminado"
+    },
+    {
+        "titulo" : "Terminar PG",
+        "estado" : "pendiente"
+    }
+]
