@@ -1,7 +1,7 @@
 const process = require("process");
 const { listar } = require("./funcionDeTareas");
 //const { listar, otraFuncion } = require("./funcionDeTareas");
-//hola
+
 
 const tareas = require('./tareas.json')
 
@@ -15,33 +15,30 @@ switch (accion) {
         
         break;
     case "terminado" : 
-    
-        let tareasTerminadas = tareas.filter(function (estado) { 
+       let tareasTerminadas = tareas.filter(function (estado) { 
            if (estado.estado === "terminado" ) {
-               return estado
-               
-           }
-           
+               return estado  
+           }    
         })
         
        listar(tareasTerminadas)
         break;
     case "pendiente" :
-        tareas.filter(function (estado) {
+        let tareasPendientes = tareas.filter(function (estado) {
             
-            if (estado.estado !== "pendiente") {
+            if (estado.estado === "pendiente") {
                 return estado
             }
-            console.log(JSON.stringify(`${tareas.titulo} => ${tareas.estado}`));
-        })   
+         }) 
+       listar(tareasPendientes)    
         break;  
         case "en-proceso" :
-            tareas.filter(function (estado) {
-                if (estado.estado !== "en proceso") {
+            let tareasEnProceso = tareas.filter(function (estado) {
+                if (estado.estado === "en proceso") {
                     return  estado
-                }
-                console.log(JSON.stringify(estado));
-            })   
+            }
+        }) 
+        listar(tareasEnProceso)  
             break;        
     case undefined :
         console.log("Atencion tienes que pasar una accion 🤔");
